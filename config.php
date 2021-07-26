@@ -1,13 +1,9 @@
 <?php
-/**
- * using mysqli_connect for database connection
- */
- 
-$databaseHost = 'localhost';
-$databaseName = 'akademik';
-$databaseUsername = 'root';
-$databasePassword = '';
- 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
- 
+//koneksi ke database mysql,
+$koneksi = mysqli_connect("localhost","root","","akademik");
+
+//cek jika koneksi ke mysql gagal, maka akan tampil pesan berikut
+if (mysqli_connect_errno()){
+	echo "Gagal melakukan koneksi ke MySQL: " . mysqli_connect_error();
+}
 ?>
